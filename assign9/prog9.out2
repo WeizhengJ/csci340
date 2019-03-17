@@ -1,0 +1,81 @@
+hTable.cc:18:7: error: expected constructor, destructor, or type conversion before ‘(’ token
+ HT::HT(cosnt unsigned& hs)
+       ^
+hTable.cc: In member function ‘void HT::insert(const Entry&)’:
+hTable.cc:36:28: error: ‘__gnu_cxx::__alloc_traits<std::allocator<std::__cxx11::list<Entry> > >::value_type {aka class std::__cxx11::list<Entry>}’ has no member named ‘key’
+   if(hTable[(idx+i)%hsize].key == OPEN)
+                            ^~~
+hTable.cc:39:28: error: no match for ‘operator=’ (operand types are ‘__gnu_cxx::__alloc_traits<std::allocator<std::__cxx11::list<Entry> > >::value_type {aka std::__cxx11::list<Entry>}’ and ‘const Entry’)
+    hTable[(idx+i)%hsize] = e;
+                            ^
+In file included from /usr/include/c++/7/list:64:0,
+                 from /home/cs340/progs/17f/p9/hTable.h:9,
+                 from hTable.cc:4:
+/usr/include/c++/7/bits/list.tcc:266:5: note: candidate: std::__cxx11::list<_Tp, _Alloc>& std::__cxx11::list<_Tp, _Alloc>::operator=(const std::__cxx11::list<_Tp, _Alloc>&) [with _Tp = Entry; _Alloc = std::allocator<Entry>]
+     list<_Tp, _Alloc>::
+     ^~~~~~~~~~~~~~~~~
+/usr/include/c++/7/bits/list.tcc:266:5: note:   no known conversion for argument 1 from ‘const Entry’ to ‘const std::__cxx11::list<Entry>&’
+In file included from /usr/include/c++/7/list:63:0,
+                 from /home/cs340/progs/17f/p9/hTable.h:9,
+                 from hTable.cc:4:
+/usr/include/c++/7/bits/stl_list.h:759:7: note: candidate: std::__cxx11::list<_Tp, _Alloc>& std::__cxx11::list<_Tp, _Alloc>::operator=(std::__cxx11::list<_Tp, _Alloc>&&) [with _Tp = Entry; _Alloc = std::allocator<Entry>]
+       operator=(list&& __x)
+       ^~~~~~~~
+/usr/include/c++/7/bits/stl_list.h:759:7: note:   no known conversion for argument 1 from ‘const Entry’ to ‘std::__cxx11::list<Entry>&&’
+/usr/include/c++/7/bits/stl_list.h:777:7: note: candidate: std::__cxx11::list<_Tp, _Alloc>& std::__cxx11::list<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = Entry; _Alloc = std::allocator<Entry>]
+       operator=(initializer_list<value_type> __l)
+       ^~~~~~~~
+/usr/include/c++/7/bits/stl_list.h:777:7: note:   no known conversion for argument 1 from ‘const Entry’ to ‘std::initializer_list<Entry>’
+hTable.cc:42:28: error: ‘__gnu_cxx::__alloc_traits<std::allocator<std::__cxx11::list<Entry> > >::value_type {aka class std::__cxx11::list<Entry>}’ has no member named ‘key’
+   if(hTable[(idx+i)%hsize].key == e.key)
+                            ^~~
+hTable.cc: In member function ‘void HT::search(const string&)’:
+hTable.cc:59:28: error: ‘__gnu_cxx::__alloc_traits<std::allocator<std::__cxx11::list<Entry> > >::value_type {aka class std::__cxx11::list<Entry>}’ has no member named ‘key’
+   if(hTable[(idx+i)%hsize].key == key)
+                            ^~~
+hTable.cc:61:59: error: ‘__gnu_cxx::__alloc_traits<std::allocator<std::__cxx11::list<Entry> > >::value_type {aka class std::__cxx11::list<Entry>}’ has no member named ‘num’
+    cout << "NUMBER: " << setw(4) << hTable[(idx+i)%hsize].num
+                                                           ^~~
+hTable.cc:62:39: error: ‘I’ was not declared in this scope
+         << " - ITEM: " << hTable[(idx+I)%hsize].desc << endl;
+                                       ^
+hTable.cc:67:27: error: ‘__gnu_cxx::__alloc_traits<std::allocator<std::__cxx11::list<Entry> > >::value_type {aka class std::__cxx11::list<Entry>}’ has no member named ‘key’
+  if(hTable[(idx+i)%hsize].key != key)
+                           ^~~
+hTable.cc: In member function ‘void HT::hTable_print()’:
+hTable.cc:76:18: error: ‘__gnu_cxx::__alloc_traits<std::allocator<std::__cxx11::list<Entry> > >::value_type {aka class std::__cxx11::list<Entry>}’ has no member named ‘key’
+   if ( hTable[i].key != OPEN)
+                  ^~~
+hTable.cc:79:47: error: ‘__gnu_cxx::__alloc_traits<std::allocator<std::__cxx11::list<Entry> > >::value_type {aka class std::__cxx11::list<Entry>}’ has no member named ‘key’
+    cout << setw(4) << i << ":  " << hTable[i].key << " - "
+                                               ^~~
+hTable.cc:80:28: error: ‘__gnu_cxx::__alloc_traits<std::allocator<std::__cxx11::list<Entry> > >::value_type {aka class std::__cxx11::list<Entry>}’ has no member named ‘num’
+    << setw(5) << hTable[i].num << "   -  " << hTable[i].desc << endl;
+                            ^~~
+hTable.cc:80:57: error: ‘__gnu_cxx::__alloc_traits<std::allocator<std::__cxx11::list<Entry> > >::value_type {aka class std::__cxx11::list<Entry>}’ has no member named ‘desc’
+    << setw(5) << hTable[i].num << "   -  " << hTable[i].desc << endl;
+                                                         ^~~~
+hTable.cc: In member function ‘void HT::pTable_print()’:
+hTable.cc:90:46: error: expected primary-expression before ‘*’ token
+  sort(pTable.begin(), pTable.end(), cmp(Entry* p, Entry* q));
+                                              ^
+hTable.cc:90:48: error: ‘p’ was not declared in this scope
+  sort(pTable.begin(), pTable.end(), cmp(Entry* p, Entry* q));
+                                                ^
+hTable.cc:90:56: error: expected primary-expression before ‘*’ token
+  sort(pTable.begin(), pTable.end(), cmp(Entry* p, Entry* q));
+                                                        ^
+hTable.cc:90:58: error: ‘q’ was not declared in this scope
+  sort(pTable.begin(), pTable.end(), cmp(Entry* p, Entry* q));
+                                                          ^
+hTable.cc:90:37: error: ‘cmp’ was not declared in this scope
+  sort(pTable.begin(), pTable.end(), cmp(Entry* p, Entry* q));
+                                     ^~~
+hTable.cc:91:31: error: ‘psize’ was not declared in this scope
+  for (unsigned int i = 0; i < psize; i++ )
+                               ^~~~~
+hTable.cc:91:31: note: suggested alternative: ‘hsize’
+  for (unsigned int i = 0; i < psize; i++ )
+                               ^~~~~
+                               hsize
+g++: error: hTable.o: No such file or directory
