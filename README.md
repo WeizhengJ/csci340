@@ -1,1 +1,2 @@
-# csci430
+# csci340
+Data Structures and Algorithm Analysis
